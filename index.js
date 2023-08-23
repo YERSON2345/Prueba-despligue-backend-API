@@ -2,6 +2,7 @@ const express = require('express');
 const conectarDB = require('./config/db')
 const cors = require('cors')
 
+const PORT = process.env.PORT || 4000
 //Creamos el servidor
 const app = express();
 
@@ -15,6 +16,6 @@ app.use('/api/administrador', require ('./routes/administrador.js'))
 
 
 
-app.listen(4000, () => {
-    console.log('El servidor esta corriendo correctamente')
+app.listen(PORT, () => {
+    console.log(`El servidor esta corriendo correctamente en el puerto${PORT}`)
 })
